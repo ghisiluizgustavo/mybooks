@@ -1,10 +1,11 @@
 
 footer {
-    background: #FEE1DC;
+    background: #B08968;
     display: flex;
     flex-direction: row;
     box-shadow: 0 0px 9px 4px rgba(0, 0, 0, 0.1), 0 -5px 2px 2px rgba(0, 0, 0, 0.1);
     justify-content: space-around;
+    color: #EDE0D4;
 }
 
 footer div:last-child {
@@ -14,12 +15,12 @@ footer div:last-child {
 
 footer div a {
     text-decoration: none;
-    color: #000;
+    color: #EDE0D4;
     margin: 10px;
     transition: all 0.5s;
 }
 
 footer div a:hover {
     font-weight: bold;
-    color: #741A40;
+    color: #7F5539;
 }
