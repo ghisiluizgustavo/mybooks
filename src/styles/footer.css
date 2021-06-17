@@ -1,48 +1,25 @@
 
 footer {
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 70px;
     background: #FEE1DC;
+    display: flex;
+    flex-direction: row;
     box-shadow: 0 0px 9px 4px rgba(0, 0, 0, 0.1), 0 -5px 2px 2px rgba(0, 0, 0, 0.1);
+    justify-content: space-around;
 }
 
-footer .logo {
-    position: relative;
-    float: left;
-    line-height: 50px;
-    padding: 15px 15px;
-    font-size: 22px;
-    font-family: 'Parisienne', cursive;
-    color: #000;
+footer div:last-child {
+    display: flex;
+    flex-direction: column;
+}
+
+footer div a {
     text-decoration: none;
-}
-
-footer .links {
-    float: right;
-    margin-right: 30px;
-    position: relative;
-}
-
-footer .links li {
-    list-style: none;
-    position: relative;
+    color: #000;
     margin: 10px;
-    display: inline-block;
-}
-
-footer .links li > a {
-    position: relative;
-    display: inline-block;
-    padding: 0 10px;
-    font-family: 'Quicksand', sans-serif;
-    text-decoration: none;
-    color: #000;
     transition: all 0.5s;
 }
 
-footer .links li > a:hover {
+footer div a:hover {
     font-weight: bold;
     color: #741A40;
 }
