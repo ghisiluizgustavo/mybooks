@@ -1,4 +1,3 @@
-
 header {
     position: fixed;
     left: 0;
@@ -46,4 +45,121 @@ header .links li > a {
 header .links li > a:hover {
     font-weight: bold;
     color: #7F5539;
+}
+
+#menu {
+    display: none;
+}
+
+#naoresponsivo {
+    display: block;
+}
+
+@media screen and (max-width: 700px) {
+    footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+    }
+
+    header {
+        background: none;
+        box-shadow: none;
+        position: absolute;
+    }
+
+    #menu {
+        display: block;
+    }
+
+    #naoresponsivo {
+        display: none!important;
+    }
+    
+    #menu {
+        width: 150px;
+        height: 150px;
+        position: absolute;
+        margin: -75px 0 0 -75px;
+        list-style: none;
+        font-size: 200%;
+        top: 0;
+        left: 50%;
+    }
+    
+    .menu-button {
+        width: 150px;
+        height: 150px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin: -75px 0 0 -75px;
+        border-radius: 50%;
+        background: #B08968;
+        background-size: 100%;
+        overflow: hidden;
+        text-decoration: none;
+    }
+    
+    #menu:not(:target)>a:first-of-type,
+    #menu:target>a:last-of-type {
+        opacity: 1;
+        z-index: 1;
+    }
+    
+    #menu:not(:target)>.icon-plus:before,
+    #menu:target>.icon-minus:before {
+        opacity: 1;
+    }
+    
+    .menu-item {
+        width: 70px;
+        height: 70px;
+        position: absolute;
+        left: 55%;
+        top: 50%;
+        margin: -50px 0 0 -50px;
+        border-radius: 50%;
+        background-color: #B08968;
+        transform: translate(0px, 0px);
+        transition: all 0.4s;
+        text-align: center;
+    }
+    
+    .menu-item:hover{
+        opacity: 0.5;
+        box-shadow: 0 5px 10px black; 
+        cursor: pointer;
+    }
+    
+    
+    .menu-item a {
+        color: #EDE0D4;
+        position: relative;
+        top: 30%;
+        left: 0;
+        text-decoration: none;
+    }
+    
+    #menu:target>.menu-item:nth-child(6) {
+        transform: rotate(60deg) translateY(150px) rotate(300deg);
+        transition-delay: 0s;
+    }
+    
+    #menu:target>.menu-item:nth-child(5) {
+        transform: rotate(20deg) translateY(155px) rotate(-20deg);
+        transition-delay: 0.1s;
+    }
+    
+    #menu:target>.menu-item:nth-child(3) {
+        transform: rotate(-20deg) translateY(155px) rotate(20deg);
+        transition-delay: 0.2s;
+    }
+    
+    #menu:target>.menu-item:nth-child(4) {
+        transform: rotate(-60deg) translateY(150px) rotate(60deg);
+        transition-delay: 0.3s;
+    }
+
 }
