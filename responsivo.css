@@ -1,0 +1,46 @@
+@media screen and (max-width: 700px){
+
+    body {
+        overflow-x: hidden;
+        margin-left: -15px;
+    }
+    .boasvindas {
+        background: none;
+        height: auto;
+    }
+
+    .boasvindas h1 {
+        font-size: 50px;
+        text-align: center;
+        margin-left: 35px;
+    }
+
+    .boasvindas .previa {
+        text-align: center;
+        padding: 15 15px;
+    }
+
+    .topicos {
+        display: block!important;
+    }
+
+    .topicos h1 {
+        text-align: center;
+    }
+
+    .passoapasso ol li {
+        list-style: none;
+        margin-left: -40%;
+        width: 90%;
+        margin-bottom: 40px;
+    }
+
+    .extra {
+        width: 90%!important;
+        padding: 30px;
+    }
+
+    .img {
+        display: none!important;
+    }
+}
