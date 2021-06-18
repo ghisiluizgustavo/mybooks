@@ -1,5 +1,8 @@
 .boasvindas {
     height: 100%;
+    background-image: url('./assets/img/homebg.png');
+    background-size: cover;
+    background-position: bottom;
 }
 .boasvindas h1 {
     font-size: 80px;
@@ -71,6 +74,49 @@
     padding: 30px;
 }
 
-.img img {
-    height: 250px;
+/* imgs do final */
+
+.box-out {
+    width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.book {
+    width: 180px;
+    height: 255px;
+    background-color: #B08968;
+    transition: all .3s ease-in-out;
+    transform-origin: left center 0px;
+    transform-style: preserve-3d;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    overflow: hidden;
+    border: 5px solid #B08968;
+}
+
+.books-1 {
+    background: url('./assets/img/livro1.jpg');
+    background-size: 180px 255px;
+}
+
+.books-2 {
+    background: url('./assets/img/livro2.jpg');
+    background-size: 180px 255px;
+}
+
+.books-3 {
+    background: url('./assets/img/livro3.jpg');
+    background-size: 180px 255px;
+}
+
+.books-4 {
+    background: url('./assets/img/livro4.jpg');
+    background-size: 180px 255px;
+}
+
+.book:hover {
+    transform: rotateY(-28deg) rotateZ(-2deg) scale(1.02);
+    box-shadow: 1px 3px 2px #B08968, 20px 8px 0 #B08968;
 }
