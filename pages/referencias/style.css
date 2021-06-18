@@ -1,0 +1,35 @@
+.info {
+    flex: 1;
+    background: #EDE0D4;
+    border-radius: 8px;
+    border: 0;
+    margin-bottom: 20px;
+    height: 250px;
+    padding: 10px 0 25px 0;
+}
+
+.info p {
+    padding: 0 15px;
+    height: 130px;
+}
+
+.info a {
+    text-decoration: none;
+}
+
+.info a button {
+    height: 50px;
+    border-radius: 8px;
+    border: 0;
+    padding: 0 35px;
+    transition: all 0.2s;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #9C6644;
+    color: #EDE0D4;
+}
+
+.info a button:hover {
+	box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.493);
+    background-color: #7F5539;
+}
