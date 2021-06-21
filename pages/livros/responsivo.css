@@ -1,0 +1,10 @@
+@media screen and (max-width: 700px){
+    #lista .item {
+        display: block;
+    }
+
+    .informacoes div {
+        margin-left: 5%;
+        width: 90%;
+    }
+}

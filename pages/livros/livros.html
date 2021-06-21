@@ -22,19 +22,47 @@
   <meta name="author" content="Jannaina e Luiz Gustavo">
   <meta name="description" content="Organização de leitura">
 
+  <meta id="viewport" name="viewport" content ="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
   <title> NomeSis | Meus Livros </title>
 </head>
 
 <body>
   <header>
-    <!-- Logo -->
-    <a href="../../index.html" class="logo">NomeSis</a>
+    <div id="naoresponsivo">
+        <!-- Logo -->
+        <a href="#" class="logo">NomeSis</a>
 
-    <ul class="links">
-      <li><a href="../../index.html"> Início </a></li>
-      <li><a href="../lista-desejo/lista-desejo.html"> Lista de desejos </a></li>
-      <li><a href="#"> Meus livros </a></li>
-      <li><a href="../referencias/index.html"> Referências </a></li>
+        <ul class="links" >
+            <li><a href="../../index.html"> Início </a></li>
+            <li><a href="../lista-desejo/lista-desejo.html"> Lista de desejos </a></li>
+            <li><a href="#"> Meus livros </a></li>
+            <li><a href="../referencias/index.html"> Referências </a></li>
+        </ul>
+    </div>
+    <ul id="menu">
+        <a class="menu-button icon-plus" href="#menu"></a>
+        <a class="menu-button icon-minus" href="#"></a>
+        <li class="menu-item">
+            <a href="#">
+                <span class="fa fa-book"></span>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="../referencias/index.html">
+                <span class="fa fa-info-circle"></span>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="../lista-desejo/lista-desejo.html">
+                <span class="fa fa-heart"></span>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="../../index.html">
+                <span class="fa fa-home"></span>
+            </a>
+        </li>
     </ul>
   </header>
 
@@ -45,7 +73,7 @@
           src="../../assets/img/4devs_gerador_imagem.png"
           alt="Capa do livro"/>
 
-          <div class=" informacoes grid-8">
+          <div class="informacoes grid-8">
             <div>
               <h1> O duque e eu </h1>
               <p><b>Autor do livro:</b> Julia Quinn</p>
@@ -62,10 +90,7 @@
               <hr/>
               <p><b>Observação:</b> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
-                irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim 
-                id est laborum."
+                quis nostrud exercitation 
               </p>
             </div>
           </div>
