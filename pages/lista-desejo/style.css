@@ -10,3 +10,21 @@
     max-width: 90%;
     border-radius: 8px;
 }
+
+.livro button {
+    width: 90%;
+    height: 50px;
+    border-radius: 8px;
+    border: none;
+    transition: all 0.2s;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #9C6644;
+    margin-top: 10px;
+    color: #EDE0D4;
+}
+
+.livro button:hover {
+	box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.493);
+    background-color: #7F5539;
+}
