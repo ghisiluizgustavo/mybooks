@@ -1,0 +1,25 @@
+#lista .item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #E6CCB2;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+	box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.493);
+}
+
+#lista div .infos {
+    display: block;
+    margin-left: 100px;
+    text-align: left;
+    margin-bottom: 100px;
+    flex-basis: 250px;
+    flex-grow: 2;
+}
+
+#lista div .infos:last-child {
+    margin-bottom: 0;
+}
