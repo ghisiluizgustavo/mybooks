@@ -6,6 +6,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Quicksand&display=swap" rel="stylesheet">
 
+  <link href="./style.css" rel="stylesheet" />
+
   <link href="../../assets/styles/header.css" rel="stylesheet" />
   <link href="../../assets/styles/grid.css" rel="stylesheet" />
   <link href="../../assets/styles/geral.css" rel="stylesheet" />
@@ -19,23 +21,85 @@
   <meta name="author" content="Jannaina e Luiz Gustavo">
   <meta name="description" content="Organização de leitura">
 
+  <meta id="viewport" name="viewport" content ="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
   <title> NomeSis | Lista de Desejos </title>
 </head>
 <body>
   <header>
-    <!-- Logo -->
-    <a href="../../index.html" class="logo">NomeSis</a>
+    <div id="naoresponsivo">
+        <!-- Logo -->
+        <a href="#" class="logo">NomeSis</a>
 
-    <ul class="links">
-      <li><a href="../../index.html"> Início </a></li>
-      <li><a href="#"> Lista de desejos </a></li>
-      <li><a href="../livros/livros.html"> Meus livros </a></li>
-      <li><a href="../referencias/index.html"> Referências </a></li>
+        <ul class="links" >
+            <li><a href="../../index.html"> Início </a></li>
+            <li><a href="#"> Lista de desejos </a></li>
+            <li><a href="../livros/livros.html"> Meus livros </a></li>
+            <li><a href="../referencias/index.html"> Referências </a></li>
+        </ul>
+    </div>
+    <ul id="menu">
+        <a class="menu-button icon-plus" href="#menu"></a>
+        <a class="menu-button icon-minus" href="#"></a>
+        <li class="menu-item">
+            <a href="#">
+                <span class="fa fa-book"></span>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="../referencias/index.html">
+                <span class="fa fa-info-circle"></span>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="../livros/livros.html">
+                <span class="fa fa-heart"></span>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="../../index.html">
+                <span class="fa fa-home"></span>
+            </a>
+        </li>
     </ul>
   </header>
 
   <main class="container">
-      <h1>lista-desejo</h1>
+      <h1> Lista de desejo </h1>
+      <p> Cadastre aqui os livros que você deseja ler e verifique quais você já listou.</p>
+
+      <section class="grid-12">
+        <div class="livro grid-3">
+          <img src="../../assets/img/4devs_gerador_imagem.png" alt="Capa do livro"/>
+          <p><b>Titulo: </b>O boneco de neve </p>
+          <p><b>Autor: </b>Jo Nesbo </p>
+        </div>
+
+        <div class="livro grid-3">
+          <img src="../../assets/img/4devs_gerador_imagem.png" alt="Capa do livro"/>
+          <p><b>Titulo: </b>O boneco de neve </p>
+          <p><b>Autor: </b>Jo Nesbo </p>
+        </div>
+
+        <div class="livro grid-3">
+          <img src="../../assets/img/4devs_gerador_imagem.png" alt="Capa do livro"/>
+          <p><b>Titulo: </b>O boneco de neve </p>
+          <p><b>Autor: </b>Jo Nesbo </p>
+        </div>
+
+        <div class="livro grid-3">
+          <img src="../../assets/img/4devs_gerador_imagem.png" alt="Capa do livro"/>
+          <p><b>Titulo: </b>O boneco de neve </p>
+          <p><b>Autor: </b>Jo Nesbo </p>
+        </div>
+
+        <div class="livro grid-3">
+          <img src="../../assets/img/4devs_gerador_imagem.png" alt="Capa do livro"/>
+          <p><b>Titulo: </b>O boneco de neve </p>
+          <p><b>Autor: </b>Jo Nesbo </p>
+        </div>
+
+      </section>
   </main>
 
   <footer>

@@ -1,0 +1,12 @@
+.livro {
+    background: #EDE0D4;
+    border-radius: 8px;
+    border: 0;
+    margin-bottom: 20px;
+    padding: 10px 0 25px 0;
+}
+
+.livro img {
+    max-width: 90%;
+    border-radius: 8px;
+}
