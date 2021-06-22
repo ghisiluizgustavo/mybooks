@@ -1,11 +1,19 @@
 .info {
-    flex: 1;
     background: #EDE0D4;
     border-radius: 8px;
     border: 0;
     margin-bottom: 20px;
-    height: 250px;
     padding: 10px 0 25px 0;
+    margin-left: 10px;
+    max-width: 270px;
+}
+
+.itens {
+    display: flex!important;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 
 .info p {
