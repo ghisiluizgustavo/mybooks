@@ -52,15 +52,20 @@ form {
     border-radius: 8px;
     box-shadow: 0px 5px 20px 5px rgba(170, 169, 169, 0.65);
     margin-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 
 form fieldset {
 	border: none;
 	padding: 0;
-	margin: 20px 0;
+	margin: 10px 0;
 	position: relative; 
     text-align: left;
+    max-width: 250px;
 }
 
 form fieldset input {
@@ -74,6 +79,24 @@ form fieldset input {
 	font-family: 'Quicksand', sans-serif;
     margin-top: 5px
 }
+
+form fieldset textarea {
+    width: 90%;
+    background: #6b6b6b2c;
+    border-radius: 8px;
+    border: 0;
+    padding: 12px 24px;
+    color: #333;
+    resize: none;
+    margin-top: 5px;
+  }
+
+form fieldset:first-child, form fieldset:nth-child(8) {
+    max-width: none;
+    width: 90%;
+    margin-left: 5%;
+}
+
 
 form button {
     width: 100%;
