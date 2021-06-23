@@ -1,3 +1,9 @@
+html {
+    scroll-behavior: smooth;
+}
+
+/* Container inicial */
+
 .boasvindas {
     background-image: url('./assets/img/homebg.png');
     background-size: cover;
@@ -33,15 +39,20 @@
     background-color: #7F5539;
 }
 
+/* Parte com 3 tópicos, segundo container */
+
 .topicos {
     display: flex!important;
     flex-direction: row;
     align-items: center;
 }
+
 .info h1{
     font-size: 55px;
     text-align: left;
 }
+
+/* Os tópicos */
 
 .passoapasso {
     margin-left: 15%!important;
@@ -56,6 +67,8 @@
 .passoapasso ol li p {
     font-size: 20px;
 }
+
+/* Parte final, container de backgorund diferente */
 
 .extra {
     color: #EDE0D4;
@@ -87,11 +100,6 @@
     height: 255px;
     background-color: #B08968;
     transition: all .3s ease-in-out;
-    transform-origin: left center 0px;
-    transform-style: preserve-3d;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    overflow: hidden;
     border: 5px solid #B08968;
 }
 
