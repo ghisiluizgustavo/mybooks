@@ -1,3 +1,21 @@
+button {
+    width: 90%;
+    height: 50px;
+    border-radius: 8px;
+    border: none;
+    transition: all 0.2s;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #9C6644;
+    margin-top: 10px;
+    color: #EDE0D4;
+}
+
+button:hover {
+	box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.493);
+    background-color: #7F5539;
+}
+
 #lista .item {
     display: flex;
     flex-direction: row;
@@ -7,6 +25,17 @@
     border-radius: 10px;
     margin-bottom: 30px;
 	box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.493);
+}
+
+#lista button {
+    width: 200px;
+    margin-left: 30px;
+}
+
+#lista button:last-child {
+    border: 1px solid #9C6644;
+    background-color: #EDE0D4;
+    color: #9C6644;
 }
 
 .informacoes {
@@ -24,24 +53,8 @@
 
 .informacoes div:last-child {
     margin-bottom: 0;
-}
-
-button {
-    width: 90%;
-    height: 50px;
-    border-radius: 8px;
-    border: none;
-    transition: all 0.2s;
-    font-size: 14px;
-    cursor: pointer;
-    background-color: #9C6644;
-    margin-top: 10px;
-    color: #EDE0D4;
-}
-
-button:hover {
-	box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.493);
-    background-color: #7F5539;
+    width: 100%;
+    text-align: right;
 }
 
 form {

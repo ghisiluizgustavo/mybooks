@@ -3,11 +3,19 @@
         display: block;
     }
 
+    #lista button {
+        width: 90%;
+        margin-left: 0;
+    }
+
     .informacoes div {
         margin-left: 5%;
         width: 90%;
     }
 
+    .informacoes div:last-child {
+        text-align: left;
+    }
     
     form fieldset:first-child, form fieldset:nth-child(8) {
         max-width: 250px;
