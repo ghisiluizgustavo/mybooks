@@ -14,7 +14,7 @@
     }
 
     .informacoes div:last-child {
-        text-align: left;
+        text-align: center;
     }
     
     form fieldset:first-child, form fieldset:nth-child(8) {

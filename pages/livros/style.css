@@ -55,6 +55,10 @@ button:hover {
     margin-bottom: 20px;
 }
 
+.informacoes div:nth-child(3){
+    width: 100%;
+}
+
 .informacoes div:last-child {
     margin-bottom: 0;
     width: 100%;
