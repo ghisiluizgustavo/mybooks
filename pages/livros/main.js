@@ -1,5 +1,7 @@
+// API dos livros
 const url = 'https://projeto-final-ppw.herokuapp.com/api/117408/';
 
+// função para listar livros
 function listarLivros() {   
     let req = fetch(url)
     let dado = req.then((response) => {
@@ -8,65 +10,99 @@ function listarLivros() {
     
     dado.then((dado) => {
       dado.forEach(element => {
+        // criar lista de livros
         criarLivro(element)
       });
     })
 }
 
+// criar lista de livros
 function criarLivro(livro) {
-    var lista = document.getElementById('lista');
+    let lista = document.getElementById('lista');
 
-    var div = document.createElement('div');
+    // formatando as datas
+    let dataIni = new Date(livro.dataInicio)
+    let dataFin = livro.dataFinalizacao !== "" ? new Date(livro.dataFinalizacao) : null
 
-    div.classList.add("item");
-    div.classList.add("grid-12");
+    let dataIniFormatada = ((dataIni.getDate() )) + "/" + ((dataIni.getMonth() + 1)) + "/" + dataIni.getFullYear();
+    let dataFinFormatada = dataFin !== null ? ((dataFin.getDate() )) + "/" + ((dataFin.getMonth() + 1)) + "/" + dataFin.getFullYear() : "------";
+
+    // container sobre o livro
+    let contLivro = document.createElement('div');
+
+    contLivro.classList.add("item");
+    contLivro.classList.add("grid-12");
 
     // imagem do livro
-    var imagem = document.createElement('img');
+    let imagem = document.createElement('img');
     imagem.src = livro.imagem;
     imagem.alt = livro.nome;
 
-    div.appendChild(imagem);
+    contLivro.appendChild(imagem);
 
     // informações
-    divInfo = document.createElement('div');
+    let divInfo = document.createElement('div');
     divInfo.classList.add("informacoes");
     divInfo.classList.add("grid-8");
 
-    // interior
+    // interior - parte um
+    let divInterior = document.createElement('div');
+
+    createAndAppend('h1', livro.nome, divInterior)
+    createAndAppend('p', `Autor do livro: ${livro.autor}`, divInterior)
+    createAndAppend('p', `Gênero do livro: ${livro.genero}`, divInterior)
+
+    divInfo.appendChild(divInterior)
+
+    // interior - parte dois
     divInterior = document.createElement('div');
 
-    // parte um
-    titulo = `<h1> ${livro.nome} </h1>`
-    divInterior.innerHTML = titulo
+    createAndAppend('h3', livro.status, divInterior)
+    createAndAppend('p', `Data de início: ${dataIniFormatada}`, divInterior)
+    createAndAppend('p', `Data finalização: ${dataFinFormatada}`, divInterior)
 
-    p = `<p><b> Autor do livro: </b> ${livro.autor}</p>`
-    divInterior.innerHTML += p
+    divInfo.appendChild(divInterior)
 
-    p = `<p><b> Gênero do livro: </b> ${livro.genero}</p>`
-    divInterior.innerHTML += p
+    // interior - observação
+    divInterior = document.createElement('div');
 
-    divInfo.innerHTML = divInterior.innerHTML
+    let hr = document.createElement('hr')
+    divInterior.appendChild(hr)
 
-    // parte dois
-    status = `<h3> ${livro.status} </h3>`
-    divInterior.innerHTML = status
+    if(livro.status === "Em andamento") {
+        var conteudo = "Observação: Você ainda não finalizou essa leitura para adicionar uma observação."
+    } else {
+        var conteudo = `Observação: ${livro.observacao}`
 
-    p = `<p><b> Data de início: </b> ${livro.dataInicio}</p>`
-    divInterior.innerHTML += p
+    }
+    
+    createAndAppend('p', conteudo, divInterior)
 
-    p = `<p><b> Data finalização: </b> ${livro.dataFinalizacao}</p>`
-    divInterior.innerHTML += p
+    divInfo.appendChild(divInterior)
 
-    divInfo.innerHTML += divInterior.innerHTML
-    // novoTitulo.textContent = titulo;
-    div.appendChild(divInfo);
+    // interior - botões
+    divInterior = document.createElement('div');
 
-    lista.appendChild(div);
+    createAndAppend('button', 'Editar', divInterior)
+    createAndAppend('button', 'Excluir', divInterior)
+
+    divInfo.appendChild(divInterior)
+
+    // adicionando a div com todas as informações no container
+    contLivro.appendChild(divInfo)
+
+    lista.appendChild(contLivro);
 }
 
-listarLivros()
+// criar elemento filho e adicionar ao elemento pai
+function createAndAppend(tag, conteudo, pai) {
+    let elemento = document.createElement(tag);
 
+    elemento.textContent = conteudo
+    pai.appendChild(elemento)
+}
+
+// adicioanr livro na API
 function adicionarLivro() {
     let imagem = document.getElementById("imagem").value
     let nome = document.getElementById("nome").value
@@ -103,7 +139,6 @@ function adicionarLivro() {
     })
 
     dado.then((dado) => {
-        console.log(dado)
+        criarLivro(dado)
     })    
-
 }
