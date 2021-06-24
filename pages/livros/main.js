@@ -113,8 +113,7 @@ function adicionarLivro() {
     let dataFinalizacao = document.getElementById("dataFinalizacao").value
     let observacao = document.getElementById("observacao").value
 
-    
-    let livro = {
+    var livro = {
         "imagem": imagem,
         "nome": nome,
         "autor": autor,
@@ -124,21 +123,93 @@ function adicionarLivro() {
         "dataFinalizacao": dataFinalizacao,
         "observacao": observacao
     }
-    
-    let opcoes = {
-        method: 'POST',
-        body: JSON.stringify(livro),
-        headers: {
-            'content-type': 'application/json'
+    if(verificarCampos(livro)) {
+        
+        
+        let opcoes = {
+            method: 'POST',
+            body: JSON.stringify(livro),
+            headers: {
+                'content-type': 'application/json'
+            }
         }
+    
+        let req = fetch(url, opcoes)
+        let dado = req.then( (res) => {
+            return res.json()
+        })
+    
+        dado.then((dado) => {
+            criarLivro(dado)
+        })   
+    }
+    
+}
+
+// verificar se todos os campos foram preenchidos
+function verificarCampos(livro) {
+    if((livro.imagem === "") || (!isValidUrl(livro.imagem))) {
+        alert("Informe o link do seu livro!")
+        return false
     }
 
-    let req = fetch(url, opcoes)
-    let dado = req.then( (res) => {
-        return res.json()
-    })
+    if(livro.nome === "") {
+        alert("Informe o nome do seu livro!")
+        return false
+    }
 
-    dado.then((dado) => {
-        criarLivro(dado)
-    })    
+    if(livro.autor === "") {
+        alert("Informe o autor do seu livro!")
+        return false
+    }
+
+    if(livro.genero === "") {
+        alert("Informe o gênero do seu livro!")
+        return false
+    }
+
+    if(livro.dataInicio === "") {
+        alert("Informe a data aproximada que você iniciou sua leitura!")
+        return false
+    }
+
+    if((livro.status === "Finalizado") && ((livro.dataFinalizacao === "") || (livro.observacao === ""))) {
+        alert("Caso tenha finalizado sua leitura, adicione a data aproximada da finalização e uma observação sobre o mesmo.")
+        return false
+    }
+
+    if((livro.status === "Finalizado") && (new Date(livro.dataInicio) > new Date(livro.dataFinalizacao))) {
+        alert("A data de finalização deve ser superior a data de início da leitura.")
+        return false
+    }
+
+    return true
+}
+
+// valida se a imagem é um URL 
+function isValidUrl(string) {
+    try {
+      new URL(string);
+    } catch (_) {
+      return false;  
+    }
+  
+    return true;
+  }
+// Habilitar campo de data e observação caso status finalizado
+function habilitaCampos() {
+    let status = document.getElementById('status').value
+    let dataFinalizacao = document.getElementById('dataFinalizacao')
+    let observacao = document.getElementById('observacao')
+
+    if(status === "Finalizado") {
+        dataFinalizacao.removeAttribute("disabled", null)
+        observacao.removeAttribute("disabled", null)
+    } else {
+        dataFinalizacao.setAttribute("disabled", "disabled")
+        observacao.setAttribute("disabled", "disabled")
+
+        dataFinalizacao.value = ""
+        observacao.value = ""
+    }
 }

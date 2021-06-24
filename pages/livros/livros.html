@@ -96,7 +96,7 @@
         <label>
           Status atual:
         </label>
-        <select name="status" id="status">
+        <select name="status" id="status" onchange="habilitaCampos()">
           <option value="Em Andamento">Em andamento</option>
           <option value="Finalizado">Finalizado</option>
         </select>
@@ -120,14 +120,14 @@
         <label>
           Data finalização da leitura:
         </label>
-        <input type="date" name="dataFinalizacao" id="dataFinalizacao" />
+        <input type="date" name="dataFinalizacao" id="dataFinalizacao" disabled />
       </fieldset>
 
       <fieldset>
         <label>
           Observação:
         </label>
-        <textarea name="observacao" id="observacao" ></textarea>
+        <textarea name="observacao" id="observacao" disabled></textarea>
       </fieldset>
 
       <button type="button" onclick="adicionarLivro()"> Cadastrar </button>
