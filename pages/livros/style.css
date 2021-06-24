@@ -85,9 +85,8 @@ form fieldset {
     max-width: 250px;
 }
 
-form fieldset input {
+form fieldset input, form fieldset select  {
 	width: 90%;
-	height: 20px;
 	background: #6b6b6b2c;
     border-radius: 8px;
     border: 0;
@@ -95,6 +94,10 @@ form fieldset input {
 	color: #333;
 	font-family: 'Quicksand', sans-serif;
     margin-top: 5px
+}
+
+form fieldset select {
+    padding: 11px 24px;
 }
 
 form fieldset textarea {
@@ -110,7 +113,7 @@ form fieldset textarea {
 
 form fieldset:first-child, form fieldset:nth-child(8) {
     max-width: none;
-    width: 90%;
+    width: 92%;
     margin-left: 5%;
 }
 
