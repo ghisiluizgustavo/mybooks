@@ -32,6 +32,10 @@ button:hover {
     margin-left: 30px;
 }
 
+#lista img {
+    max-height: 400px;
+}
+
 #lista button:last-child {
     border: 1px solid #9C6644;
     background-color: #EDE0D4;

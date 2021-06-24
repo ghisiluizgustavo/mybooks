@@ -75,59 +75,63 @@
         <label>
           Link da imagem:
         </label>
-        <input type="text" placeholder="https://umlinktopzera.com/imagem.png" />
+        <input type="text" name="imagem" id="imagem" placeholder="https://umlinktopzera.com/imagem.png" />
       </fieldset>
 
       <fieldset>
         <label>
           Titulo do livro:
         </label>
-        <input type="text" placeholder="titulo do livro" />
+        <input type="text" name="nome" id="nome" placeholder="titulo do livro" />
       </fieldset>
 
       <fieldset>
         <label>
           Autor do livro:
         </label>
-        <input type="text" placeholder="Autor" />
+        <input type="text" name="autor" id="autor" placeholder="Autor" />
       </fieldset>
 
       <fieldset>
         <label>
           Gênero:
         </label>
-        <input type="text" placeholder="Terror" />
+        <input type="text" name="genero" id="genero" placeholder="Terror" />
       </fieldset>
 
       <fieldset>
         <label>
           Status atual:
         </label>
-        <input type="text" placeholder="Terror" />
+        <select name="status" id="status">
+          <option value="Em Andamento">Em Andamento</option>
+          <option value="Finalizado">Finalizado</option>
+        </select>
+        <input type="text" name="status" id="status" placeholder="Terror" />
       </fieldset>
 
       <fieldset>
         <label>
           Data de início da leitura:
         </label>
-        <input type="date" />
+        <input type="date" name="dataInicio" id="dataInicio" />
       </fieldset>
 
       <fieldset>
         <label>
           Data finalização da leitura:
         </label>
-        <input type="date" />
+        <input type="date" name="dataFinalizacao" id="dataFinalizacao" />
       </fieldset>
 
       <fieldset>
         <label>
           Observação:
         </label>
-        <textarea></textarea>
+        <textarea name="observacao" id="observacao" ></textarea>
       </fieldset>
 
-      <button type="button"> Cadastrar </button>
+      <button type="button" onclick="adicionarLivro()"> Cadastrar </button>
 
     </form>
 
@@ -135,7 +139,7 @@
     
     <h1> Meus livros cadastrados </h1>
     <section id="lista">
-      <div class="item grid-12">
+      <!-- <div class="item grid-12">
           <img
           src="../../assets/img/4devs_gerador_imagem.png"
           alt="Capa do livro"/>
@@ -166,42 +170,8 @@
               <button type="button"> Excluir </button>
             </div>
           </div>
-      </div>
+      </div> -->
 
-      <div class="item grid-12">
-        <img
-        src="../../assets/img/4devs_gerador_imagem.png"
-        alt="Capa do livro"/>
-
-        <div class=" informacoes grid-8">
-          <div>
-            <h1> O duque e eu </h1>
-            <p><b>Autor do livro:</b> Julia Quinn</p>
-            <p><b>Gênero Livro:</b> Romance</p>
-          </div>
-
-          <div>
-            <h3> Em andamento </h3>
-            <p><b>Data de início:</b> 09/06/2021</p>
-            <p><b>Data finalização:</b> --</p>
-          </div>
-
-          <div>
-            <hr/>
-            <p><b>Observação:</b> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
-              irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim 
-              id est laborum."
-            </p>
-          </div>
-
-          <div>
-            <button type="button"> Editar </button>
-            <button type="button"> Excluir </button>
-          </div>
-        </div>
     </div>
 
     </section>
@@ -234,5 +204,6 @@
   </footer>
 
 </body>
+<script src="./main.js"></script>
 
 </html>
