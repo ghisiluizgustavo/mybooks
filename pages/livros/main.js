@@ -1,21 +1,6 @@
 // API dos livros
 const url = 'https://projeto-final-ppw.herokuapp.com/api/117408/';
 
-// função para listar livros
-function listarLivros() {   
-    let req = fetch(url)
-    let dado = req.then((response) => {
-      return response.json()
-    })
-    
-    dado.then((dado) => {
-      dado.reverse().forEach(element => {
-        // criar lista de livros
-        criarLivro(element)
-      });
-    })
-}
-
 // criar lista de livros
 function criarLivro(livro) {
     let lista = document.getElementById('lista');
@@ -83,7 +68,10 @@ function criarLivro(livro) {
     // interior - botões
     divInterior = document.createElement('div');
 
-    createAndAppend('button', 'Editar', divInterior)
+    createAndAppend('button', 'Editar', divInterior).addEventListener("click", () => {
+        editarLivro(livro._id)
+    })
+    
     createAndAppend('button', 'Excluir', divInterior).addEventListener("click", () => {
         let res = confirm("Você realmente deseja excluir o livro " + livro.nome)
         if(!res){
@@ -110,6 +98,57 @@ function createAndAppend(tag, conteudo, pai) {
     return elemento
 }
 
+// listar livros da API [GET]
+function listarLivros() {   
+    let req = fetch(url)
+    let dado = req.then((response) => {
+      return response.json()
+    })
+    
+    dado.then((dado) => {
+      dado.reverse().forEach(element => {
+        // criar lista de livros
+        criarLivro(element)
+      });
+    })
+}
+
+// editar livro na API [PUT]
+function editarLivro(id){
+    let imagem = document.getElementById("imagemEdit").value
+    let nome = document.getElementById("nomeEdit").value
+    let autor = document.getElementById("autorEdit").value
+    let genero = document.getElementById("generoEdit").value
+    let status = document.getElementById("statusEdit").value
+    let dataInicio = document.getElementById("dataInicioEdit").value
+    let dataFinalizacao = document.getElementById("dataFinalizacaoEdit").value
+    let observacao = document.getElementById("observacaoEdit").value
+
+    let livro = montarObjetoLivro(imagem, nome, autor, genero, status, dataInicio, dataFinalizacao, observacao)
+
+    //se tirar isso ele pode enviar os dados em branco
+    if(verificarCampos(livro)){
+        let opcoes = {
+            method: "PUT",
+            body: JSON.stringify(livro),
+            headers: {
+                'content-type': 'application/json'
+            }
+        }
+    
+        let req = fetch(url + id, opcoes)
+        let dado = req.then((res) => {
+            return res.json()
+        })
+    
+        dado.then((dado) => {
+            alert('O livro ' + dado.nome + ' foi editado!')
+            document.location.reload()
+        })    
+    }    
+}
+
+// excluir livro na API [DELETE]
 function excluirLivro(id){    
     let opcoes = {
         method: 'DELETE',
@@ -126,7 +165,7 @@ function excluirLivro(id){
     })
 }
 
-// adicioanr livro na API
+// adicionar livro na API [POST]
 function adicionarLivro() {
     let imagem = document.getElementById("imagem").value
     let nome = document.getElementById("nome").value
@@ -137,16 +176,8 @@ function adicionarLivro() {
     let dataFinalizacao = document.getElementById("dataFinalizacao").value
     let observacao = document.getElementById("observacao").value
 
-    var livro = {
-        "imagem": imagem,
-        "nome": nome,
-        "autor": autor,
-        "genero": genero,
-        "status": status,
-        "dataInicio": dataInicio,
-        "dataFinalizacao": dataFinalizacao,
-        "observacao": observacao
-    }
+    let livro = montarObjetoLivro(imagem, nome, autor, genero, status, dataInicio, dataFinalizacao, observacao)
+
     if(verificarCampos(livro)) {
         
         
@@ -168,15 +199,8 @@ function adicionarLivro() {
             document.getElementById('lista').lastChild.scrollIntoView({
                 behavior: 'smooth'
             })
-        })
-
-        
-        
-        
-        
+        })   
     }
-    
-    
 }
 
 // verificar se todos os campos foram preenchidos
@@ -229,6 +253,7 @@ function isValidUrl(string) {
   
     return true;
   }
+
 // Habilitar campo de data e observação caso status finalizado
 function habilitaCampos() {
     let status = document.getElementById('status').value
@@ -244,5 +269,19 @@ function habilitaCampos() {
 
         dataFinalizacao.value = ""
         observacao.value = ""
+    }
+}
+
+// monta um objeto livro e retorna ele
+function montarObjetoLivro(imagem, nome, autor, genero, status, dataInicio, dataFinalizacao, observacao){
+    return livro = {
+        "imagem": imagem,
+        "nome": nome,
+        "autor": autor,
+        "genero": genero,
+        "status": status,
+        "dataInicio": dataInicio,
+        "dataFinalizacao": dataFinalizacao,
+        "observacao": observacao
     }
 }
