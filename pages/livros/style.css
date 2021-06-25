@@ -39,8 +39,13 @@ button:hover {
 
 #lista button:last-child {
     border: 1px solid #9C6644;
-    background-color: #EDE0D4;
+    background-color: #eddcd4;
     color: #9C6644;
+}
+
+#lista button:last-child:hover {
+    background-color: #db6c6c;
+    color: #fff
 }
 
 .informacoes {
