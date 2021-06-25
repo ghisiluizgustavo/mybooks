@@ -9,7 +9,7 @@ function listarLivros() {
     })
     
     dado.then((dado) => {
-      dado.forEach(element => {
+      dado.reverse().forEach(element => {
         // criar lista de livros
         criarLivro(element)
       });
