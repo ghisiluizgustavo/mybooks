@@ -165,8 +165,17 @@ function adicionarLivro() {
     
         dado.then((dado) => {
             criarLivro(dado)
-        })   
+            document.getElementById('lista').lastChild.scrollIntoView({
+                behavior: 'smooth'
+            })
+        })
+
+        
+        
+        
+        
     }
+    
     
 }
 
