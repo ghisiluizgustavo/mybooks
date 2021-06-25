@@ -33,7 +33,8 @@ button:hover {
 }
 
 #lista img {
-    max-height: 400px;
+    max-height: 300px;
+    max-width: 200px;
 }
 
 #lista button:last-child {
