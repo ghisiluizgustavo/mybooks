@@ -84,7 +84,13 @@ function criarLivro(livro) {
     divInterior = document.createElement('div');
 
     createAndAppend('button', 'Editar', divInterior)
-    createAndAppend('button', 'Excluir', divInterior)
+    createAndAppend('button', 'Excluir', divInterior).addEventListener("click", () => {
+        let res = confirm("Você realmente deseja excluir o livro " + livro.nome)
+        if(!res){
+            return
+        }
+        excluirLivro(livro._id)
+    })
 
     divInfo.appendChild(divInterior)
 
@@ -100,6 +106,24 @@ function createAndAppend(tag, conteudo, pai) {
 
     elemento.textContent = conteudo
     pai.appendChild(elemento)
+
+    return elemento
+}
+
+function excluirLivro(id){    
+    let opcoes = {
+        method: 'DELETE',
+    }
+
+    let req = fetch(url + id, opcoes)
+    let dado = req.then( (res) => {
+        return res.json()
+    })
+
+    dado.then( (dado) => {
+        alert('O livro ' + dado.nome + ' foi excluido!')
+        document.location.reload()
+    })
 }
 
 // adicioanr livro na API
