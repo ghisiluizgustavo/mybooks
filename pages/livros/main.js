@@ -89,7 +89,7 @@ function criarLivro(livro) {
     })
     
     createAndAppend('button', 'Excluir', divInterior).addEventListener("click", () => {
-        let res = confirm("Você realmente deseja excluir o livro " + livro.nome)
+        let res = confirm(`Você realmente deseja excluir o livro ${livro.nome} da sua lista de leitura?`)
         if(!res){
             return
         }
@@ -204,24 +204,24 @@ function excluirLivro(id){
 
 // adicionar livro na API [POST]
 function cadastrarLivro() {
-    let imagem = document.getElementById("imagem").value
-    let nome = document.getElementById("nome").value
-    let autor = document.getElementById("autor").value
-    let genero = document.getElementById("genero").value
-    let status = document.getElementById("status").value
-    let dataInicio = document.getElementById("dataInicio").value
-    let dataFinalizacao = document.getElementById("dataFinalizacao").value
-    let observacao = document.getElementById("observacao").value
+    let imagem = document.getElementById("imagem")
+    let nome = document.getElementById("nome")
+    let autor = document.getElementById("autor")
+    let genero = document.getElementById("genero")
+    let status = document.getElementById("status")
+    let dataInicio = document.getElementById("dataInicio")
+    let dataFinalizacao = document.getElementById("dataFinalizacao")
+    let observacao = document.getElementById("observacao")
 
     let livro = {
-        "imagem": imagem,
-        "nome": nome,
-        "autor": autor,
-        "genero": genero,
-        "status": status,
-        "dataInicio": dataInicio,
-        "dataFinalizacao": dataFinalizacao,
-        "observacao": observacao
+        "imagem": imagem.value,
+        "nome": nome.value,
+        "autor": autor.value,
+        "genero": genero.value,
+        "status": status.value,
+        "dataInicio": dataInicio.value,
+        "dataFinalizacao": dataFinalizacao.value,
+        "observacao": observacao.value
     }
 
     if(verificarCampos(livro)) {
@@ -245,5 +245,13 @@ function cadastrarLivro() {
                 behavior: 'smooth'
             })
         })   
+
+        imagem.value = ""
+        nome.value = ""
+        autor.value = ""
+        genero.value = ""
+        dataInicio.value = ""
+        dataFinalizacao.value = ""
+        observacao.value = ""
     }
 }

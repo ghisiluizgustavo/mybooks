@@ -26,11 +26,11 @@
 
   <title> myBooks | Lista de Desejos </title>
 </head>
-<body>
+<body onload="listarLivros()">
   <header>
     <div id="naoresponsivo">
         <!-- Logo -->
-        <a href="#" class="logo">myBooks</a>
+        <a href="../../index.html" class="logo">myBooks</a>
 
         <ul class="links" >
             <li><a href="../../index.html"> Início </a></li>
@@ -74,92 +74,60 @@
           <label>
             Link da imagem:
           </label>
-          <input type="text" placeholder="https://umlinktopzera.com/imagem.png" />
+          <input type="text" placeholder="https://umlinktopzera.com/imagem.png" id="imagem" />
         </fieldset>
 
         <fieldset>
           <label>
             Titulo do livro:
           </label>
-          <input type="text" placeholder="titulo do livro" />
+          <input type="text" placeholder="titulo do livro" id="nome" />
         </fieldset>
 
         <fieldset>
           <label>
             Autor do livro:
           </label>
-          <input type="text" placeholder="Autor" />
+          <input type="text" placeholder="Autor" id="autor" />
         </fieldset>
 
-        <button type="button"> Cadastrar </button>
+        <button type="button" onclick="cadastrarLivro()"> Cadastrar </button>
 
       </form>
 
       <hr/>
 
       <h1> Minha lista de desejo </h1>
-      <section class="grid-12">
-        <div class="livro">
-          <img src="../../assets/img/4devs_gerador_imagem.png" alt="Capa do livro"/>
-          <p><b>Titulo: </b>O boneco de neve </p>
-          <p><b>Autor: </b>Jo Nesbo </p>
-          <button> Excluir </button>
-        </div>
-
-        <div class="livro">
-          <img src="../../assets/img/4devs_gerador_imagem.png" alt="Capa do livro"/>
-          <p><b>Titulo: </b>O boneco de neve </p>
-          <p><b>Autor: </b>Jo Nesbo </p>
-          <button> Excluir </button>
-        </div>
-
-        <div class="livro">
-          <img src="../../assets/img/4devs_gerador_imagem.png" alt="Capa do livro"/>
-          <p><b>Titulo: </b>O boneco de neve </p>
-          <p><b>Autor: </b>Jo Nesbo </p>
-          <button> Excluir </button>
-        </div>
-
-        <div class="livro">
-          <img src="../../assets/img/4devs_gerador_imagem.png" alt="Capa do livro"/>
-          <p><b>Titulo: </b>O boneco de neve </p>
-          <p><b>Autor: </b>Jo Nesbo </p>
-          <button> Excluir </button>
-        </div>
-
-        <div class="livro">
-          <img src="../../assets/img/4devs_gerador_imagem.png" alt="Capa do livro"/>
-          <p><b>Titulo: </b>O boneco de neve </p>
-          <p><b>Autor: </b>Jo Nesbo </p>
-          <button> Excluir </button>
-        </div>
-
+      <section class="grid-12" id="lista">
       </section>
   </main>
 
   <footer>
     <div>
-      <h4> Jannaina </h4>
-      <p>
-        <a href="#"> <i class="fa fa-instagram fa-2x"></i> </a>
-        <a href="#"> <i class="fa fa-github fa-2x"></i> </a>
-        <a href="#"> <i class="fa fa-twitter fa-2x"></i></a>
-      </p>
+        <h4> Jannaina </h4>
+        <p>
+            <a href="https://www.instagram.com/jnnastti/"> <i class="fa fa-instagram fa-2x"></i> </a>
+            <a href="https://github.com/jnnastti"> <i class="fa fa-github fa-2x"></i> </a>
+            <a href="https://twitter.com/Jnnastti"> <i class="fa fa-twitter fa-2x"></i></a>
+        </p>
 
-      <h4> Luiz Gustavo </h4>
-      <p>
-        <a href="#"> <i class="fa fa-instagram fa-2x"></i> </a>
-        <a href="#"> <i class="fa fa-github fa-2x"></i> </a>
-        <a href="#"> <i class="fa fa-twitter fa-2x"></i></a>
-      </p>
+        <h4> Luiz Gustavo </h4>
+        <p>
+            <a href="https://instagram.com/ghisiluizgustavo"> <i class="fa fa-instagram fa-2x"></i> </a>
+            <a href="https://github.com/ghisiluizgustavo"> <i class="fa fa-github fa-2x"></i> </a>
+            <a href="https://twitter.com/iLuizionista"> <i class="fa fa-twitter fa-2x"></i></a>
+        </p>
     </div>
 
     <div>
-      <h1> myBooks </h1>
-      <a href="../../index.html"> Início </a>
-      <a href="#"> Lista de desejos </a>
-      <a href="../livros/livros.html"> Meus livros </a>
-      <a href="../referencias/index.html"> Referências </a>
+        <h1> myBooks </h1>
+        <a href="#"> Início </a>
+        <a href="./pages/lista-desejo/lista-desejo.html"> Lista de desejos </a>
+        <a href="./pages/livros/livros.html"> Meus livros </a>
+        <a href="./pages/referencias/index.html"> Referências </a>
     </div>
-  </footer>
+</footer>
 </body>
+<script src="./main.js"></script>
+<script src="./verificacao.js"></script>
+</html>

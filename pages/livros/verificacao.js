@@ -46,6 +46,11 @@ function verificarCampos(livro) {
         return false
     }
 
+    if((livro.status === "Finalizado") && (new Date(livro.dataFinalizacao) > new Date())) {
+        alert("A data de finalização não pode ser superior ao dia de hoje.")
+        return false
+    }
+
     return true
 }
 

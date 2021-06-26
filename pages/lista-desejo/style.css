@@ -5,6 +5,7 @@
     margin-bottom: 20px;
     padding: 10px 0 25px 0;
     margin-left: 10px;
+    width: 300px;
 }
 
 section {
@@ -16,7 +17,8 @@ section {
 }
 
 .livro img {
-    max-width: 90%;
+    max-width: 200px;
+    max-height: 200px;
     border-radius: 8px;
 }
 
