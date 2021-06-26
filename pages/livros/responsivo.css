@@ -25,4 +25,15 @@
     form fieldset select {
         width: 100%;
     }
+
+    
+    .modalDialog form .btn {
+        text-align: center;
+        width: 100%;
+        display: block!important;;
+    }
+
+    .modalDialog form button {
+        width: 100%!important;
+    }
 }

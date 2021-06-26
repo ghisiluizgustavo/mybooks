@@ -1,0 +1,125 @@
+.modalDialog {
+    position: fixed;
+    font-family: 'Open Sans Condensed', sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    transition: opacity 0.2s ease-in;
+    pointer-events: none;
+    color: #333;
+    overflow-y: auto;
+  }
+
+  .modalDialog:target {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .modalDialog > div {
+    max-width: 800px;
+    position: relative;
+    padding: 5px 20px 0px 20px;
+    border-radius: 10px;
+    background: #EDE0D4;
+  }
+
+  .modalDialog form {
+    box-shadow: none;
+    margin-top: -40px;
+  }
+
+  .modalDialog h2 {
+    margin-top: -50px;
+  }
+
+.modalDialog form button {
+  width: 150px;
+	margin-top: 5px;
+	height: 45px;
+	border-radius: 8px;
+	outline: none!important;
+	background: #9C6644;
+	border: none;
+	cursor: pointer;
+	color: #f4f4f4;
+	font-family: 'Quicksand', sans-serif;
+	transition: all 0.4s;
+}
+
+.modalDialog form button:hover {
+	box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.493);
+  background-color: #7F5539;
+}
+
+.modalDialog form button:last-child {
+	height: 45px;
+	border-radius: 8px;
+	outline: none!important;
+	cursor: pointer;
+	font-family: 'Quicksand', sans-serif;
+	transition: all 0.4s;
+  border: 1px solid #9C6644;
+  background-color: #eddcd4;
+  color: #9C6644
+}
+
+.modalDialog form .btn {
+    text-align: right;
+    width: 100%;
+    display:flex;
+    justify-content: space-between;
+}
+
+.modalDialog form .btn button {
+  float:left;
+}
+
+  /*close button */
+  .close .close-container{
+    position: relative;
+    margin-left: auto;
+    margin-top: 15px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    padding: 0;
+}
+
+.close .leftright{
+height: 4px;
+width: 30px;
+position: absolute;
+background-color: #9C6644;
+border-radius: 2px;
+transform: rotate(45deg);
+transition: all .3s ease-in;
+padding: 0;
+}
+
+.close .rightleft{
+height: 4px;
+width: 30px;
+position: absolute;
+background-color: #9C6644;
+border-radius: 2px;
+transform: rotate(-45deg);
+transition: all .3s ease-in;
+padding: 0;
+}
+
+.close .close{
+margin: 60px 0 0 5px;
+position: absolute;
+}
+
+.close .close-container:hover .leftright{
+transform: rotate(-45deg);
+background-color: #7F5539;
+}
+.close .close-container:hover .rightleft{
+transform: rotate(45deg);
+background-color: #7F5539;
+}

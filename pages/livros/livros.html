@@ -8,12 +8,12 @@
 
   <link href="./style.css" rel="stylesheet" />
   <link href="./responsivo.css" rel="stylesheet" />
+  <link href="./stylePopup.css" rel="stylesheet" />
 
   <link href="../../assets/styles/header.css" rel="stylesheet" />
   <link href="../../assets/styles/grid.css" rel="stylesheet" />
   <link href="../../assets/styles/geral.css" rel="stylesheet" />
   <link href="../../assets/styles/footer.css" rel="stylesheet" />
-  <link href="./popup.css" rel="stylesheet" >
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
 
@@ -132,112 +132,94 @@
         <textarea name="observacao" id="observacao" disabled></textarea>
       </fieldset>
 
-      <button type="button" onclick="adicionarLivro()"> Cadastrar </button>
+      <button type="button" onclick="cadastrarLivro()"> Cadastrar </button>
 
     </form>
-
-    <hr/>
-    <h1>Editar</h1>
-
-    <form>
-      <fieldset>
-        <label>
-          Link da imagem:
-        </label>
-        <input type="text" name="imagemEdit" id="imagemEdit" placeholder="https://umlinktopzera.com/imagem.png" />
-      </fieldset>
-
-      <fieldset>
-        <label>
-          Titulo do livro:
-        </label>
-        <input type="text" name="nomeEdit" id="nomeEdit" placeholder="titulo do livro" />
-      </fieldset>
-
-      <fieldset>
-        <label>
-          Autor do livro:
-        </label>
-        <input type="text" name="autorEdit" id="autorEdit" placeholder="Autor" />
-      </fieldset>
-
-      <fieldset>
-        <label>
-          Status atual:
-        </label>
-        <select name="statusEdit" id="statusEdit">
-          <option value="Em andamento">Em andamento</option>
-          <option value="Finalizado">Finalizado</option>
-        </select>
-      </fieldset>
-
-      <fieldset>
-        <label>
-          Gênero:
-        </label>
-        <input type="text" name="generoEdit" id="generoEdit" placeholder="Terror" />
-      </fieldset>
-
-      <fieldset>
-        <label>
-          Data de início da leitura:
-        </label>
-        <input type="date" name="dataInicioEdit" id="dataInicioEdit" />
-      </fieldset>
-
-      <fieldset>
-        <label>
-          Data finalização da leitura:
-        </label>
-        <input type="date" name="dataFinalizacaoEdit" id="dataFinalizacaoEdit"/>
-      </fieldset>
-
-      <fieldset>
-        <label>
-          Observação:
-        </label>
-        <textarea name="observacaoEdit" id="observacaoEdit"></textarea>
-      </fieldset>
-
-    </form>
-
     <hr/>
     
     <h1> Meus livros cadastrados </h1>
     <section id="lista">
-      <!-- <div id="editarModal" class="modalDialog">
-        <div>
-            <a href="#" title="Close" class="close">
-                <div class="close-container">
-                    <div class="leftright"></div>
-                    <div class="rightleft"></div>
-                </div>
-            </a>
-            <h2>Editar empresa</h2>
-            <p>Altere as informações da sua empresa e mantenha seus dados sempre atualizados.</p>
-
-            <form>
-              <fieldset>
-                <label>
-                  Data finalização da leitura:
-                </label>
-                <input type="date" name="dataFinalizacao" id="dataFinalizacao" disabled />
-              </fieldset>
-        
-              <fieldset>
-                <label>
-                  Observação:
-                </label>
-                <textarea name="observacao" id="observacao" disabled></textarea>
-              </fieldset>
-              <fieldset class="btn">
-                  <a href="#"><button type="button"> Cancelar </button></a>
-                  <button type="submit"> Salvar </button>
-              </fieldset>
-            </form>
-        </div>
-      </div> -->
     </section>
+
+    <!-- popup de editar -->
+    <div id="editarModal" class="modalDialog">
+      <div>
+          <a href="#" class="close">
+              <div class="close-container">
+                  <div class="leftright"></div>
+                  <div class="rightleft"></div>
+              </div>
+          </a>
+          <h2>Editar livro</h2>
+          <form>
+            <fieldset>
+              <label>
+                Link da imagem:
+              </label>
+              <input type="text" name="imagemEdit" id="imagemEdit" placeholder="https://umlinktopzera.com/imagem.png" />
+            </fieldset>
+      
+            <fieldset>
+              <label>
+                Titulo do livro:
+              </label>
+              <input type="text" name="nomeEdit" id="nomeEdit" placeholder="titulo do livro" />
+            </fieldset>
+      
+            <fieldset>
+              <label>
+                Autor do livro:
+              </label>
+              <input type="text" name="autorEdit" id="autorEdit" placeholder="Autor" />
+            </fieldset>
+      
+            <fieldset>
+              <label>
+                Status atual:
+              </label>
+              <select name="statusEdit" id="statusEdit">
+                <option value="Em andamento">Em andamento</option>
+                <option value="Finalizado">Finalizado</option>
+              </select>
+            </fieldset>
+      
+            <fieldset>
+              <label>
+                Gênero:
+              </label>
+              <input type="text" name="generoEdit" id="generoEdit" placeholder="Terror" />
+            </fieldset>
+      
+            <fieldset>
+              <label>
+                Data de início da leitura:
+              </label>
+              <input type="date" name="dataInicioEdit" id="dataInicioEdit" />
+            </fieldset>
+      
+            <fieldset>
+              <label>
+                Data finalização da leitura:
+              </label>
+              <input type="date" name="dataFinalizacaoEdit" id="dataFinalizacaoEdit"/>
+            </fieldset>
+      
+            <fieldset>
+              <label>
+                Observação:
+              </label>
+              <textarea name="observacaoEdit" id="observacaoEdit"></textarea>
+            </fieldset>
+
+            <input type="hidden" id="idEdit">
+      
+            <div class="btn">
+              <button type="button" onclick="editarLivro()"> Salvar </button>
+              <a href="#"><button type="button" > Cancelar </button></a>
+            </div>
+          </form>
+      </div>
+    </div>
   </main>
 
   <footer>
@@ -268,5 +250,5 @@
 
 </body>
 <script src="./main.js"></script>
-
+<script src="./verificacao.js"></script>
 </html>
