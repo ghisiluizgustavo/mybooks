@@ -82,3 +82,21 @@ function habilitaCampos() {
         observacao.value = ""
     }
 }
+
+// Habilitar campo de data e observação caso status finalizado no popup de editar
+function habilitaCamposEditar() {
+    let status = document.getElementById('statusEdit').value
+    let dataFinalizacao = document.getElementById('dataFinalizacaoEdit')
+    let observacao = document.getElementById('observacaoEdit')
+
+    if(status === "Finalizado") {
+        dataFinalizacao.removeAttribute("disabled", null)
+        observacao.removeAttribute("disabled", null)
+    } else {
+        dataFinalizacao.setAttribute("disabled", "disabled")
+        observacao.setAttribute("disabled", "disabled")
+
+        dataFinalizacao.value = ""
+        observacao.value = ""
+    }
+}

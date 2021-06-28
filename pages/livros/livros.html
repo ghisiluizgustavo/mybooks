@@ -177,7 +177,7 @@
               <label>
                 Status atual:
               </label>
-              <select name="statusEdit" id="statusEdit">
+              <select name="statusEdit" id="statusEdit" onchange="habilitaCamposEditar()">
                 <option value="Em andamento">Em andamento</option>
                 <option value="Finalizado">Finalizado</option>
               </select>
@@ -201,14 +201,14 @@
               <label>
                 Data finalização da leitura:
               </label>
-              <input type="date" name="dataFinalizacaoEdit" id="dataFinalizacaoEdit"/>
+              <input type="date" name="dataFinalizacaoEdit" id="dataFinalizacaoEdit" disabled/>
             </fieldset>
       
             <fieldset>
               <label>
                 Observação:
               </label>
-              <textarea name="observacaoEdit" id="observacaoEdit"></textarea>
+              <textarea name="observacaoEdit" id="observacaoEdit" disabled></textarea>
             </fieldset>
 
             <input type="hidden" id="idEdit">
