@@ -48,8 +48,8 @@ function listarLivros() {
 <h3> 📙 Contribuidores: </h3>
 
 <ul>
-  <li><a href="https://www.instagram.com/jnnastti"> Jannaina </a></li>
-  <li><a href="https://instagram.com/ghisiluizgustavo">Luiz Gustavo </a></li>
+  <li><a href="https://www.linkedin.com/in/jannaina-sangaletti-3a8b47171/"> Jannaina </a></li>
+  <li><a href="https://www.linkedin.com/in/luiz-gustavo-ghisi-flores-88bb61171/">Luiz Gustavo </a></li>
 </ul>
 
 <hr/>
